@@ -23,4 +23,5 @@ jobs:
         - name: Print the input name to STDOUT
           run: |
             echo The username is ${{ inputs.user_name || 'Guy you no try jare.....mtcheeeew'}}  
-            echo '${{ toJSON(github) }}'
+            echo '${{ github.workflow }} - ${{ github.event_name }} '
+            # echo '${{ toJSON(github) }}'
