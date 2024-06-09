@@ -6,6 +6,11 @@ run-name: Deploy by @${{ github.actor }}
 on:
     push:
     workflow_dispatch:
+        inputs:
+            user_name:
+                description: 'What is your user name ?'
+                required: true
+                type: string
 
 jobs:
     print-username:
@@ -13,5 +18,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Print the input name to STDOUT
-          run: echo The username is Victor
+          run: echo The username is {{inputs.user_name}}
               
