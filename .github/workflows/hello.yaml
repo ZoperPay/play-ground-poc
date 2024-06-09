@@ -5,12 +5,15 @@ run-name: Deploy by @${{ github.actor }}
 
 on:
     push:
+
     workflow_dispatch:
         inputs:
             user_name:
                 description: 'What is your user name ?'
                 required: true
                 type: string
+    schedule:
+        - cron: '*/2 * * * *'
 
 jobs:
     print-username:
@@ -18,5 +21,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Print the input name to STDOUT
-          run: echo The username is ${{inputs.user_name || 'Guy you no try jare.....mtcheeeew'}}
-              
+          run: echo The username is ${{ inputs.user_name || 'Guy you no try jare.....mtcheeeew'}} ${{github.event}}
