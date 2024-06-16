@@ -1,0 +1,4 @@
+exclude:
+  - "**/Readme.md"
+  - "**/[Rr]eadme.md"
+  - "**/[Rr][Ee][Aa][Dd][Mm][Ee].md"
