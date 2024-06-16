@@ -1,0 +1,22 @@
+
+name: First Github Action Pipeline
+
+run-name: Deploy by @${{ github.actor }}
+
+on:
+    push:
+
+jobs:
+    print-username:
+        name: name printing
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
+    
+            - name: Super-linter
+              uses: super-linter/super-linter@v6.6.0  # x-release-please-version
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
