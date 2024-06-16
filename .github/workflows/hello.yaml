@@ -4,7 +4,6 @@ name: First Github Action Pipeline
 run-name: Deploy by @${{ github.actor }}
 
 on:
-    push:
 
     workflow_dispatch:
         inputs:
